@@ -43,12 +43,14 @@ function sortearAmigo() {
     else {
         listaAmigos = getListaAmigos();
         listaAmigos.innerHTML = "";
+        document.getElementById("botao-sortear").style.visibility = "hidden";
+        document.getElementById("botao-reset").style.visibility = "visible";
         let resultadoAmigo = document.getElementById("resultado");
         resultadoAmigo.innerHTML = `<li>${amigos[gerarIndiceAleatorio()]}</li>`;
     }
 }
 
-//limpar lista ul que exibe nome dos amigos assim que sortear
-//limpar resultadoAmigo após sortear e for adicionar outro nome - mudar o botao para novo amigo secreto ou criar um novo botao que ativa quando sortear pela primeira vez.
+
+
 
 
