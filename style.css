@@ -160,3 +160,10 @@ ul {
 .button-draw:hover {
     background-color: var(--color-button-hover);
 }
+
+.nome-secreto {
+    background-color: #ccc;
+    padding: 5px 10px;
+    display: inline-block;
+    cursor: pointer;
+}

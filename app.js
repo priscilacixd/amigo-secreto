@@ -38,15 +38,31 @@ function gerarIndiceAleatorio() {
 
 function sortearAmigo() {
     if (amigos.length == 0) {
-        alert("Lista de amigos vazia, adicione amigos.");
+        alert("Todos foram sorteados!");
+        document.getElementById("botao-sortear").style.visibility = "hidden";
+        document.getElementById("botao-reset").style.visibility = "visible";
     }
     else {
         listaAmigos = getListaAmigos();
         listaAmigos.innerHTML = "";
-        document.getElementById("botao-sortear").style.visibility = "hidden";
-        document.getElementById("botao-reset").style.visibility = "visible";
-        let resultadoAmigo = document.getElementById("resultado");
-        resultadoAmigo.innerHTML = `<li>${amigos[gerarIndiceAleatorio()]}</li>`;
+        listaSorteados = document.getElementById("resultado");
+        listaSorteados.innerHTML = "";
+
+        let indiceSorteado = gerarIndiceAleatorio();
+        let amigoSecreto = amigos.splice(indiceSorteado, 1)[0];
+
+        let li = document.createElement("li");
+        let span = document.createElement("span");
+        span.textContent = "🔒 Nome escondido";
+        span.classList.add("nome-secreto");
+
+        span.onclick = function() {
+            span.textContent = amigoSecreto;
+            span.style.backgroundColor = "transparent";
+        };
+
+        li.appendChild(span); 
+        listaSorteados.appendChild(li); 
     }
 }
 
