@@ -38,7 +38,9 @@ function gerarIndiceAleatorio() {
 
 function sortearAmigo() {
     if (amigos.length == 0) {
-        alert("Todos foram sorteados!");
+        alert("Todos foram sorteados! Lista de amigos vazia");
+        listaSorteados = document.getElementById("resultado");
+        listaSorteados.innerHTML = "";
         document.getElementById("botao-sortear").style.visibility = "hidden";
         document.getElementById("botao-reset").style.visibility = "visible";
     }
@@ -53,7 +55,7 @@ function sortearAmigo() {
 
         let li = document.createElement("li");
         let span = document.createElement("span");
-        span.textContent = "🔒 Nome escondido";
+        span.textContent = "🔒 Clique aqui para ver seu amigo secreto";
         span.classList.add("nome-secreto");
 
         span.onclick = function() {
