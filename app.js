@@ -55,12 +55,17 @@ function sortearAmigo() {
 
         let li = document.createElement("li");
         let span = document.createElement("span");
-        span.textContent = "🔒 Clique aqui para ver seu amigo secreto";
+        span.textContent = "🔒 Clique para ver, e novamente para esconder";
         span.classList.add("nome-secreto");
 
         span.onclick = function() {
-            span.textContent = amigoSecreto;
-            span.style.backgroundColor = "transparent";
+            if (span.textContent === "🔒 Clique para ver, e novamente para esconder") {
+                span.textContent = amigoSecreto;
+                span.style.backgroundColor = "transparent";
+            } else {
+                span.textContent = "🔒 Clique para ver, e novamente para esconder";
+                span.style.backgroundColor = ""; 
+            }
         };
 
         li.appendChild(span); 
