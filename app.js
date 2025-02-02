@@ -1,4 +1,5 @@
 let amigos = [];
+let corAtualResultado = false;
 
 function getListaAmigos() {
     return document.getElementById("listaAmigos");
@@ -68,6 +69,9 @@ function sortearAmigo() {
                 span.style.backgroundColor = ""; 
             }
         };
+
+        corAtualResultado = !corAtualResultado;
+        span.style.color = corAtualResultado ? "#01bc01" : "#933e95";
 
         li.appendChild(span); 
         listaSorteados.appendChild(li); 
