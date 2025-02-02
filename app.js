@@ -43,6 +43,7 @@ function sortearAmigo() {
         listaSorteados.innerHTML = "";
         document.getElementById("botao-sortear").style.visibility = "hidden";
         document.getElementById("botao-reset").style.visibility = "visible";
+        document.getElementById("botao-adicionar").setAttribute("disabled", true);
     }
     else {
         listaAmigos = getListaAmigos();
